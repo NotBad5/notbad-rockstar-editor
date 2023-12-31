@@ -1,2 +1,6 @@
 # notbad-rockstar-editor
-Simple FiveM script with which you can use Rockstar editor. To start recording use /recordstart, to stop recording use /recordstop, to stop and discard current recording type /recorddiscard, to open rockstar editor /rockstareditor 
+Simple commands to record and stop recording, and to take pictures.
+
+## Command Usage
+- ``/record (start/stop/discard)`` 
+- ``/picture``
