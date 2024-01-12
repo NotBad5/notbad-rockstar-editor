@@ -6,10 +6,9 @@ TriggerEvent('chat:addSuggestion', '/picture', 'Take a picture')
 
 RegisterCommand('record', function(args)
 	local type = args[1]
-	if type == 'start' then StartRecording(1)
-	if type == 'stop' then StopRecordingAndSaveClip()
-	if type == 'discard' then StopRecordingAndDiscardClip()
-	else return end
+	if type == 'start' then StartRecording(1) end
+	if type == 'stop' then StopRecordingAndSaveClip() end
+	if type == 'discard' then StopRecordingAndDiscardClip() end
 end)
 
 RegisterCommand('picture', function()
