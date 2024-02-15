@@ -3,21 +3,26 @@ TriggerEvent('chat:addSuggestion', '/record', 'Recording options', {
 })
 
 TriggerEvent('chat:addSuggestion', '/picture', 'Take a picture')
+TriggerEvent('chat:addSuggestion', '/rockstareditor', 'Opens rockstar editor')
 
-RegisterCommand('record', function(args)
+RegisterCommand('record', function(source, args, rawCommand)
 	local type = args[1]
 	if type == 'start' then StartRecording(1) end
 	if type == 'stop' then StopRecordingAndSaveClip() end
 	if type == 'discard' then StopRecordingAndDiscardClip() end
 end)
 
-RegisterCommand('picture', function()
-	BeginTakeHighQualityPhoto();
-	SaveHighQualityPhoto(-1);
-	FreeMemoryForHighQualityPhoto();
+RegisterCommand('rockstareditor', function()
+	ActivateRockstarEditor()
 end)
 
-RegisterKeyMapping('record start', '(Rockstar) Start Recording', 'keyboard', '')
-RegisterKeyMapping('record stop', '(Rockstar) Stop Recording', 'keyboard', '')
-RegisterKeyMapping('record discard', '(Rockstar) Discard Recording', 'keyboard', '')
-RegisterKeyMapping('picture', '(Rockstar) Take a Picture', 'keyboard', '')
+RegisterCommand('picture', function()
+	BeginTakeHighQualityPhoto()
+	SaveHighQualityPhoto(-1)
+	FreeMemoryForHighQualityPhoto()
+end)
+
+RegisterKeyMapping('record start', '(Rockstar editor) Start Recording', 'keyboard', '')
+RegisterKeyMapping('record stop', '(Rockstar editor) Stop Recording', 'keyboard', '')
+RegisterKeyMapping('record discard', '(Rockstar editor) Discard Recording', 'keyboard', '')
+RegisterKeyMapping('picture', '(Rockstar editor) Take a Picture', 'keyboard', '')
