@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>notbad-rockstar-editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="bar-top" class="bar"></div>
+    <div id="bar-bottom" class="bar"></div>
+
+    <div id="flash"></div>
+
+    <div id="indicator" class="top-right" hidden>
+        <span class="tally"></span>
+        <span id="indicator-label"></span>
+        <span id="indicator-time"></span>
+    </div>
+
+    <div id="toasts" aria-live="polite"></div>
+
+    <section id="menu" hidden role="dialog" aria-labelledby="menu-title">
+        <header>
+            <h1 id="menu-title"></h1>
+            <p id="menu-status"></p>
+        </header>
+
+        <div id="view-main">
+        <div class="rows">
+            <button data-action="toggle"><span class="dot"></span><span class="label"></span><kbd></kbd></button>
+            <button data-action="discard"><span class="dot"></span><span class="label"></span><kbd></kbd></button>
+            <button data-action="replay"><span class="dot"></span><span class="label"></span><kbd></kbd></button>
+            <button data-action="saveReplay"><span class="dot"></span><span class="label"></span><kbd></kbd></button>
+            <button data-action="picture"><span class="dot"></span><span class="label"></span><kbd></kbd></button>
+            <button data-action="cinematic"><span class="dot"></span><span class="label"></span><kbd></kbd></button>
+        </div>
+
+        <div class="rows leave">
+            <button data-action="editor"><span class="dot"></span><span class="label"></span><kbd></kbd></button>
+            <button data-action="escrow" hidden><span class="dot"></span><span class="label"></span><kbd></kbd></button>
+        </div>
+        </div>
+
+        <div id="view-escrow" hidden>
+            <div class="escrow-body">
+                <h2 id="escrow-title"></h2>
+                <p id="escrow-text"></p>
+            </div>
+            <div class="rows" id="escrow-tools"></div>
+            <div class="escrow-body">
+                <h3><span id="escrow-list-title"></span> <span id="escrow-count"></span></h3>
+                <ul id="escrow-list"></ul>
+                <p id="escrow-legend"></p>
+            </div>
+            <div class="rows">
+                <button data-local="proceed" hidden><span class="dot"></span><span class="label"></span></button>
+                <button data-local="copy"><span class="label"></span></button>
+                <button data-local="back"><span class="label"></span></button>
+            </div>
+        </div>
+
+        <footer id="menu-hint"></footer>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
